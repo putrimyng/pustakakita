@@ -1,6 +1,6 @@
 "use client";
 
-
+// Import necessary hooks from React
 import { useState, useCallback } from "react";
 
 const T = {
@@ -72,10 +72,11 @@ const COVER_EMO  = ["📖","🌸","🌿","🌙","🌾","🦋","🌺","☀️","�
 const ST_LABEL   = {requested:"Requested",approved:"Approved",pending_meeting:"Pending handoff",in_transit:"In transit",active:"Active",overdue:"Overdue ⚠️",extend_requested:"Extension asked",return_initiated:"Being returned",returned:"Returned"};
 const ST_COLOR   = {requested:"blue",approved:"blue",pending_meeting:"purple",in_transit:"orange",active:"green",overdue:"red",extend_requested:"orange",return_initiated:"purple",returned:"green"};
 
-const getBook    = id => BOOK_DEFS.find(b=>b.id===id);
-const getMember  = (id,members) => members.find(m=>m.id===id)||SEED_MEMBERS[0];
-const isLentFn   = (copy,loans) => loans.some(l=>l.bookId===copy.bookId&&l.ownerId===copy.ownerId&&["requested","approved","pending_meeting","in_transit","active","overdue","extend_requested","return_initiated"].includes(l.state));
-const getLoanFn  = (copy,loans) => loans.find(l=>l.bookId===copy.bookId&&l.ownerId===copy.ownerId&&["requested","approved","pending_meeting","in_transit","active","overdue","extend_requested","return_initiated"].includes(l.state));
+// Tambahkan tanda kurung dan tipe data (: any)
+const getBook    = (id: any) => BOOK_DEFS.find(b => b.id === id);
+const getMember  = (id: any, members: any[]) => members.find(m => m.id === id) || SEED_MEMBERS[0];
+const isLentFn   = (copy: any, loans: any[]) => loans.some(l => l.bookId === copy.bookId && l.ownerId === copy.ownerId);
+const getLoanFn  = (copy: any, loans: any[]) => loans.find(l => l.bookId === copy.bookId && l.ownerId === copy.ownerId);
 
 const Stars = ({n,size=12}) => <span style={{color:T.gold,fontSize:size,letterSpacing:-1}}>{"★".repeat(n)}{"☆".repeat(5-n)}</span>;
 const Avatar = ({member,size=36}) => <div style={{width:size,height:size,borderRadius:"50%",background:member?.color||T.brown,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:size*0.32,fontWeight:700,flexShrink:0}}>{member?.initials||"?"}</div>;
