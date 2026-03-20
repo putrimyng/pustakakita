@@ -11,12 +11,12 @@ const T = {
 };
 
 const SEED_MEMBERS = [
-  {id:1,name:"Mira Kusuma",  initials:"MK",role:"coordinator",color:"#7A3B1E",email:"mira@email.com",  joined:"Jan 2024",notifEmail:true, notifApp:true},
-  {id:2,name:"Dini Aulia",   initials:"DA",role:"member",     color:"#C87941",email:"dini@email.com",  joined:"Jan 2024",notifEmail:false,notifApp:true},
-  {id:3,name:"Rani Pratiwi", initials:"RP",role:"member",     color:"#A05C30",email:"rani@email.com",  joined:"Feb 2024",notifEmail:true, notifApp:true},
-  {id:4,name:"Sari Dewi",    initials:"SD",role:"member",     color:"#8B6914",email:"sari@email.com",  joined:"Jan 2024",notifEmail:false,notifApp:true},
-  {id:5,name:"Ayu Lestari",  initials:"AL",role:"member",     color:"#5C6E1A",email:"ayu@email.com",   joined:"Mar 2024",notifEmail:false,notifApp:true},
-  {id:6,name:"Nadia Wijaya", initials:"NW",role:"member",     color:"#1A5C6B",email:"nadia@email.com", joined:"Feb 2024",notifEmail:true, notifApp:true},
+  {id:1,name:"Putri Mayang", initials:"PM",role:"coordinator",color:"#7A3B1E",email:"mira@email.com",  joined:"Jan 2024",notifEmail:true, notifApp:true},
+  {id:2,name:"Amelia",       initials:"AM",role:"member",     color:"#C87941",email:"dini@email.com",  joined:"Jan 2024",notifEmail:false,notifApp:true},
+  {id:3,name:"Puty",         initials:"PU",role:"member",     color:"#A05C30",email:"rani@email.com",  joined:"Feb 2024",notifEmail:true, notifApp:true},
+  {id:4,name:"Vinka",        initials:"VI",role:"member",     color:"#8B6914",email:"sari@email.com",  joined:"Jan 2024",notifEmail:false,notifApp:true},
+  {id:5,name:"Meita",        initials:"ME",role:"member",     color:"#5C6E1A",email:"ayu@email.com",   joined:"Mar 2024",notifEmail:false,notifApp:true},
+  {id:6,name:"Endi",         initials:"EN",role:"member",     color:"#1A5C6B",email:"nadia@email.com", joined:"Feb 2024",notifEmail:true, notifApp:true},
 ];
 
 const BOOK_DEFS = [
@@ -52,11 +52,11 @@ const SEED_LOANS = [
 ];
 
 const SEED_NOTIFS = [
-  {id:1,toId:1,emoji:"📬",title:"Nadia wants to borrow Lessons in Chemistry", body:"Tap to approve or decline.",                        time:"2h ago",   read:false,action:"approve_request",loanId:5},
-  {id:2,toId:1,emoji:"⚠️",title:"The Midnight Library is overdue",            body:"Ayu has had it since Mar 1. Time to follow up.",    time:"5h ago",   read:false,action:"overdue_owner",  loanId:1},
-  {id:3,toId:1,emoji:"📬",title:"Rani is returning Crying in H Mart",         body:"She'll bring it to the next meeting. Confirm when you have it.",time:"Yesterday",read:false,action:"confirm_return",loanId:6},
-  {id:4,toId:1,emoji:"🎉",title:"Your borrow request was approved!",          body:"Dini will bring Normal People to the next meeting.", time:"2d ago",   read:true, action:null},
-  {id:5,toId:1,emoji:"🧍",title:"Ayu joined your queue for Klara and the Sun",body:"She's #2 after Sari.",                              time:"3d ago",   read:true, action:null},
+  {id:1,toId:1,emoji:"📬",title:"Endi wants to borrow Lessons in Chemistry", body:"Tap to approve or decline.",                         time:"2h ago",   read:false,action:"approve_request",loanId:5},
+  {id:2,toId:1,emoji:"⚠️",title:"The Midnight Library is overdue",           body:"Meita has had it since Mar 1. Time to follow up.",   time:"5h ago",   read:false,action:"overdue_owner",  loanId:1},
+  {id:3,toId:1,emoji:"📬",title:"Puty is returning Crying in H Mart",        body:"She'll bring it to the next meeting. Confirm when you have it.",time:"Yesterday",read:false,action:"confirm_return",loanId:6},
+  {id:4,toId:1,emoji:"🎉",title:"Your borrow request was approved!",          body:"Amelia will bring Normal People to the next meeting.", time:"2d ago",   read:true, action:null},
+  {id:5,toId:1,emoji:"🧍",title:"Meita joined your queue for Klara and the Sun",body:"She's #2 after Vinka.",                             time:"3d ago",   read:true, action:null},
 ];
 
 const MOCK_ISBN = {
@@ -111,7 +111,7 @@ function LoginScreen({onLogin,onGoRegister}) {
       {err&&<div style={{background:T.redBg,color:T.red,borderRadius:10,padding:"10px 14px",fontSize:13,marginBottom:16}}>{err}</div>}
       <Btn variant="primary" onClick={submit}>Sign in →</Btn>
       <div style={{textAlign:"center",marginTop:20,fontSize:13,color:T.textSm}}>Don't have an account?{" "}<span onClick={onGoRegister} style={{color:T.brown,fontWeight:600,cursor:"pointer"}}>Register here</span></div>
-      <div style={{marginTop:20,background:T.warm50,borderRadius:12,padding:"12px 14px",fontSize:12,color:T.textSm}}>💡 <strong>Demo:</strong> Email pre-filled as Mira (coordinator). Just tap Sign in.</div>
+      <div style={{marginTop:20,background:T.warm50,borderRadius:12,padding:"12px 14px",fontSize:12,color:T.textSm}}>💡 <strong>Demo:</strong> Email pre-filled as Putri Mayang (coordinator). Just tap Sign in.</div>
     </div>
   </div>;
 }
